@@ -1,0 +1,54 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>    
+    <script src="~/Scripts/angular/angular.min.js"></script>
+    <script src="~/Scripts/angular/angular-route.min.js"></script>
+    <script src="~/Scripts/angular/angular-ui-bootstrap.js"></script>    
+    <script src="~/Scripts/site/factory.js"></script>
+    <script src="~/Scripts/site/memberControllers.js"></script>
+    <script src="~/Scripts/site/orderControllers.js"></script>
+    <script src="~/Scripts/site/app.js"></script>
+    <link rel="Stylesheet" type="text/css" href="~/Styles/bootstrap/bootstrap.min.css"> 
+    <link rel="Stylesheet" type="text/css" href="~/Styles/site.css"> 
+</head>
+<body data-ng-app="memberApp">   
+    <div class="header navbar navbar-fixed-top">                
+        <ul class="nav navbar-nav navbar-left">
+            <li class="navbar-brand">
+                <div id="logo">Dashboard</div>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="toolbar visible-xs">
+                <a href="#/members">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </li>
+            <li class="toolbar visible-xs">
+                <a href="#/orders">
+                    <span class="glyphicon glyphicon-th-list"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="container-fluid" id="mainContainer">
+        <div class="hidden-xs col-sm-3" id="sideBarContent">
+            <ul class="nav" id="sideBar">    
+                <li><a href="#/members">Members</a></li>
+                <li><a href="#/orders">Orders</a></li>                
+            </ul>
+        </div>      
+        <div class="col-xs-12 col-sm-9" id="formContent">
+            <div  ng-view></div>
+        </div>
+    </div>  
+             
+</body>
+</html>

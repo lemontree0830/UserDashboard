@@ -1,0 +1,26 @@
+﻿<section>
+    <h1 class="contentTitle">Members</h1>
+    <button class="btn btn-styled"><a href="#/members/0"><span class="glyphicon glyphicon-plus"></span>New Member</a></button>
+    <div class="form-group searchArea">
+        <label class="form-label">Search:</label>
+        <input class="form-control searchBox" ng-model="filterBy" type="text"/>
+    </div>       
+        
+    <table class="customTable">
+        <tr>
+          <th ng-click="sortField='lastName'; reverse = !reverse">Name</th>
+          <th ng-click="sortField=['state.name','city']; reverse = !reverse">Location</th>
+          <th ng-click="sortField='orders.length'; reverse = !reverse">Orders</th>
+          <th></th>
+        </tr>
+        <tr ng-repeat="member in members | filter:filterBy |orderBy:sortField:reverse">
+            <td><a href="#/members/{{member.id}}">{{member.firstName}} {{member.lastName}}</a></td>
+            <td>{{member.city}}, {{member.state.name}}</td>
+            <td><a href="#/memberOrders/{{member.id}}">{{ member.orders.length }} 
+                <span ng-pluralize count="member.orders.length"
+                        when="{'0': 'Order','1': 'Order','other': 'Orders'}">
+                </span></a></td>
+            <td><button class="btn btn-styled" ng-click="deleteMember(member.id)">Delete</button></td>
+        </tr>
+    </table>
+</section>

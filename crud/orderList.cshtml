@@ -1,0 +1,38 @@
+﻿<section>
+    <h1 class="contentTitle">All Orders</h1>   
+    <div class="form-group searchArea">
+        <label class="form-label">Search by Member/Product:</label>
+        <input class="form-control searchBox" ng-model="filters" type="text"/>
+    </div>       
+    <div class="col-md-12 memberOrderGroup" data-ng-repeat="memberOrder in memberOrders |filter:filters | orderBy:'lastName'">
+        <div>
+            <h4>{{ memberOrder.firstName + ' ' + memberOrder.lastName }}</h4>
+            <h6>{{ memberOrder.email}}</h6>
+            <h6>{{ memberOrder.address + ', ' + memberOrder.city + ', ' + memberOrder.state.abbreviation + ' ' + memberOrder.zip}}</h6>
+        </div>
+        <table class="customTable">
+            <tr>
+              <th ng-click="sortField='product'; reverse=!reverse">Product</th>
+              <th ng-click="sortField='date'; reverse=!reverse">Date</th>
+              <th ng-click="sortField='quantity'; reverse=!reverse">Quantity</th>
+              <th ng-click="sortField='price'; reverse=!reverse">Unit Price</th>
+              <th ng-click="sortField='total'; reverse=!reverse">Total</th>
+            </tr>
+            <tr ng-repeat="order in memberOrder.orders |orderBy:sortField:reverse">
+                <td>{{order.product}}</td>
+                <td>{{order.date | date:'MM/dd/yyyy'}}</td>
+                <td>{{order.quantity}}</td>
+                <td>{{order.price | currency}}</td>
+                <td>{{order.total | currency}}</td>
+            </tr>
+            <tr class="info">
+                <td colspan="4">
+                    &nbsp;
+                </td>
+                <td>
+                    <strong>{{ memberOrder.ordersTotal | currency }}</strong>
+                </td>
+            </tr>
+        </table>
+    </div>       
+</section>

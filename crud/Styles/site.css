@@ -1,0 +1,169 @@
+﻿@media screen and (max-width: 767px) {   
+    .navbar-left{
+        float:left;
+    }
+    .navbar-right{
+        float:right;
+    }
+    #formContent {
+    margin-left:0;
+    }
+}
+@media screen and (min-width: 768px) {       
+    #formContent {
+    margin-left:25%;
+    }
+}
+html {
+    height:100%;
+}
+body {
+    height:100%;
+}
+.header {
+    background-color:#db6449;
+    color:#8e381e;
+    line-height:50px;
+    border-radius:0;
+    margin-bottom:0;
+    padding-right:5%;
+}
+.header .navbar-nav{
+    margin-top:0;
+    margin-bottom:0;
+}
+.header .navbar-nav > li > a{
+    color: white;
+    background-color: transparent;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.header .navbar-nav > li > a:hover, 
+.header .navbar-nav > li > a:focus{
+    background-color:#8e381e;    
+}
+.header .navbar-nav > li {
+    float:left;
+    border-right: 1px solid transparent;
+}
+#logo{
+    margin-left:15px;
+    font-size:24px;
+}
+#mainContainer {
+    min-height: calc(100% - 52px);
+    height: calc(100% - 52px);
+    padding-left: 0;
+    padding-right: 0;
+    margin-top:50px;
+}
+/*Styles for side bar*/
+#sideBarContent {
+    position:fixed;
+    height:100%;
+    background-color:#eee;
+    padding-left:0;
+    padding-right:0;
+    font-family:'OpenSans-Regular', sans-serif;
+}
+#sideBar {
+    margin-top:15px;    
+}
+#sideBar > li > a:hover, #sideBar > li > a:hover {
+    background-color: #d1d3d4;
+}
+#sideBar > li > a{
+    color: #48444b;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 15px 30px;
+    cursor:pointer;
+}
+#formContent {
+    height:100%;
+    padding-left: 30px;
+    padding-right: 5%;
+}
+.btn-styled {
+    float:left;
+    border-radius: 8px;
+    background-color: #A3A5A8;
+    border-color: #A3A5A8;
+}
+.btn-styled a{
+    text-decoration:none;
+    color:inherit;
+}
+.btn-styled span {
+    right: 5px;
+    top: 2px;
+}
+.btn-styled:hover, .btn-styled:focus, .btn-styled.focus, .btn-styled:active, .btn-styled.active {
+    border-color: #A3A5A8;
+    background-color: #A3A5A8;
+    -webkit-box-shadow: inset 0 5px 12px -5px #ccc, inset 0 -5px 12px -5px #ccc;
+    box-shadow: inset 0 5px 12px -5px #ccc, inset 0 -5px 12px -5px #ccc;
+}
+.searchArea {
+    text-align: right;
+    margin-bottom: 10px;
+}
+.searchBox {
+    width:200px;
+    display:inline-block;
+}
+.customTable {
+    width:100%;
+}
+.customTable tr:first-child th {
+    background-color: #CA5C35;
+    color: white;
+    font-size:16px;
+    padding: 10px;
+    cursor: default;
+    line-height: 1;
+    outline: none;
+    cursor:pointer;
+}
+.customTable > tbody > tr:nth-child(odd) > td{
+    background-color:#f9f9f9;
+}
+.customTable > tbody > tr:nth-child(even) > td{
+    background-color:#eee;
+}
+.customTable td {
+    padding: 5px 12px;
+    font-size: 12px;
+}
+#memberDetailForm {
+    width: 50%;
+    margin-top: 30px;
+}
+#memberDetailForm .ng-invalid.ng-touched {
+    border-color: #FA787E;
+  }
+
+#memberDetailForm .ng-valid.ng-touched {
+    border-color: #78FA89;
+}
+#memberDetailForm label {
+    margin-bottom:10px;
+}
+#editMember {
+    top: 3px;
+    margin-right: 5px;
+}
+.savechanges_bar {
+    margin-top:30px;
+}
+.memberOrderGroup {
+    margin-bottom:30px;
+}
+/*Styles for modals*/
+.modal .modal-content {
+    background-color: #e6e7e8;
+    width:400px;
+}
+.modal .modal-header {
+    padding-bottom:0;
+}

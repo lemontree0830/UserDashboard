@@ -1,0 +1,34 @@
+﻿<section> 
+    <h1 class="contentTitle">Order For {{ memberDetail.firstName + ' ' + memberDetail.lastName }}</h1>  
+    <div class="col-md-12 memberOrderGroup">
+        <div>
+            <h4>{{ memberDetail.firstName + ' ' + memberDetail.lastName }}</h4>
+            <h6>{{ memberDetail.email}}</h6>
+            <h6>{{ memberDetail.address + ', ' + memberDetail.city + ', ' + memberDetail.state.abbreviation + ' ' + memberDetail.zip}}</h6>
+        </div>
+        <table class="customTable">
+            <tr>
+              <th ng-click="sortField='product'; reverse=!reverse">Product</th>
+              <th ng-click="sortField='date'; reverse=!reverse">Date</th>
+              <th ng-click="sortField='quantity'; reverse=!reverse">Quantity</th>
+              <th ng-click="sortField='price'; reverse=!reverse">Unit Price</th>
+              <th ng-click="sortField='total'; reverse=!reverse">Total</th>
+            </tr>
+            <tr ng-repeat="order in memberDetail.orders |orderBy:sortField:reverse">
+                <td>{{order.product}}</td>
+                <td>{{order.date | date:'MM/dd/yyyy'}}</td>
+                <td>{{order.quantity}}</td>
+                <td>{{order.price | currency}}</td>
+                <td>{{order.total | currency}}</td>
+            </tr>
+            <tr class="info">
+            <td colspan="4">
+                &nbsp;
+            </td>
+            <td>
+                <strong>{{ memberDetail.ordersTotal | currency }}</strong>
+            </td>
+        </tr>
+        </table>
+    </div>       
+</section>
